@@ -712,6 +712,144 @@ a1.setAttribute("href","http://www.rte.ie/");
 [@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/master/exercises/JavaScriptEx2.md)
 
 
+---
+@title[Contents]
+### Contents
+
+@ol[](false)
+- What is JavaScript?
+- Three Web Layers
+- Separation of Concerns
+- Hello World
+- Code Fundamentals
+- The DOM
+- **Event Handling**
+
+@olend
+
+---
+@title[Events]
+<!-- ### Events -->
+
+@size[1.5em](Events) are:
+
+@ul[](true)
+- clicking a hyperlink
+- clicking a button
+- selecting a value in a dropdown box
+- scrolling
+- changing focus
+- typing a value into a form field
+- a page finished loading
+- etc.
+@ulend
+
+
+---
+@title[Event Handling]
+### Event Handling
+
+@ul[](true)
+- An @size[1.5em](event handler) is a function that's bound to an @size[1.5em](event) that happens a node in the DOM
+- The function is called automatically when the event happens to the node
+- An example...
+@ulend 
+
+---
+@title[Event Handling]
+### Event Handling
+
+A hyperlink: [FC Barcelona](http://www.fcbarcelona.com)
+
+@ul[](true)
+- Let's handle a user @size[1.5em](clicking) a hyperlink
+- The browser generates an @size[1.5em](onclick) event
+- Normally the browser will respond to that click by going to the URL specified
+- Before this happens, we'll write an @size[1.5em](event handler) to respond to the event first
+@ulend
+
+
+---
+@title[Event Handling]
+### Event Handling
+
+`FirstEvent.html`
+```html
+<!DOCTYPE html>
+<html>
+<body>
+<a href="www.fcbarcelona.com">FCB</a>
+</body>
+</html>
+```
+
+
+@ul[](true)
+- Let's capture the `onclick` event...
+@ulend
+
+---
+@title[Event Handling]
+### Event Handling
+
+`FirstEvent.html`
+```html
+<!DOCTYPE html>
+<html>
+<body>
+<a href="www.fcbarcelona.com" onclick="msg()">FCB</a>
+</body>
+</html>
+```
+@[4](onclick event is an attribute added to anchor tag)
+@[4](we'll call an event handler function called msg())
+@[*]
+
+@ul[](true)
+- Let's add `msg()` event handler for `onclick` event...
+@ulend
+
+
+---
+@title[Event Handling]
+### Event Handling
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+  function msg() {
+    alert("about to enter the FC Barcelona website");
+  }
+</script>
+</head>
+<body>
+<a href="www.fcbarcelona.com" onclick="msg()">FCB</a>
+</body>
+</html>
+```
+@[3,4,8,9](SCRIPT tag inside HEAD tag)
+@[3,4,8,9,5-7](msg() function is the event handler)
+@[*]
+
+[@fa[external-link]](http://localhost/javascript/FirstEvent.html)
+
+
+---
+@title[Exercise 3]
+### Do Exercise 3 - Event Handling Part 1
+
+[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/master/exercises/JavaScriptEx3.md)
+
+
+
+<!-- FOR TUESDAY BELOW -->
+
+
+
+
+
 
 ---?color=black
 @ulend
