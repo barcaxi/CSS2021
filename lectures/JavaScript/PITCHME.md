@@ -844,7 +844,108 @@ A hyperlink: [FC Barcelona](http://www.fcbarcelona.com)
 
 
 
-<!-- FOR TUESDAY BELOW -->
+
+
+---
+@title[Event Handling]
+### Event Handling
+
+@ul[](true)
+- We should keep our JavaScript & HTML @size[1.5em](separate)
+- HTML should be in a `.html` file
+- JavaScript should be in a `.js` file
+- This adheres to the @size[1.5em](Separation of Concerns Principle)
+@ulend
+
+---
+@title[Event Handling]
+### Event Handling
+
+Event Handling Steps
+
+@ol[](true)
+- Identify HTML element that causes event (e.g. `<a>`)
+- Identify the event type (e.g. `onclick`)
+- Write event handler function in JavaScript file
+@olend
+
+
+@ul[](true)
+- Let's revisit our hyperlink example...
+@ulend
+
+---
+@title[Event Handling]
+### Event Handling
+
+`FirstEventV2.html` (HTML only):
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<script src="FirstEventV2.js"></script>
+</head>
+<body>
+<a id="fcb" href="www.fcbarcelona.com">FCB</a>
+</body>
+</html>
+```
+@[4](our JavaScript code script.js is loaded here)
+@[4,7](our hyperlink with an id attribute)
+@[*]()
+
+
+---
+@title[Event Handling]
+### Event Handling
+
+`FirstEventV2.js` (JavaScript only):
+
+```javascript
+window.onload = function()
+{
+  var aTag = document.getElementById("fcb"); // 1.
+
+  aTag.onclick = function() // 2.
+  {
+    alert("about to enter the FC Barcelona website"); // 3.
+  }
+}
+```
+@[1,2,9](when the window loads run this code)
+@[1,2,9,3](1. Get a reference to the element that causes event)
+@[1,2,9,3,5](2. Identify the event type)
+@[1,2,9,3,5,6-8](3. Event handler code)
+@[*]()
+
+[@fa[external-link]](http://localhost/javascript/FirstEventV2.html)
+
+---
+@title[Event Handling]
+### More Events
+
+@ul[](true)
+- `onclick` - mouse clicks an element
+- `onload` - a page or image is finished loading
+- `onblur` - an element loses focus
+- `onfocus` - an element gets focus
+- `onchange` - change in a text box or dropdown box
+- `onmouseout` - mouse is moved off an element
+- `onmouseover` - mouse is moved over an element
+- `onselect` - text is selected
+- `onsubmit` - the submit button is clicked
+- See more event info [here](http://www.w3schools.com/jsref/dom_obj_event.asp)
+@ulend
+
+
+---
+@title[Exercise 3]
+### Exercise 3 - Event Handling Part 2
+
+[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/master/exercises/JavaScriptEx3.md)
+
+
 
 
 
