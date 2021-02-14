@@ -181,7 +181,7 @@ console.log("hello, console!");
 @title[Exercise 1]
 ### Do Exercise 1 - Part 1
 
-[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/master/exercises/JavaScriptEx1.md)
+[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/main/exercises/JavaScriptEx1.md)
 
 
 ---
@@ -384,7 +384,7 @@ console.log(sqr(3));
 @title[Exercise 2]
 ### Do Exercise 1 - Part 2
 
-[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/master/exercises/JavaScriptEx1.md)
+[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/main/exercises/JavaScriptEx1.md)
 
 
 
@@ -709,7 +709,7 @@ a1.setAttribute("href","http://www.rte.ie/");
 @title[Exercise 2]
 ### Do Exercise 2 - The DOM
 
-[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/master/exercises/JavaScriptEx2.md)
+[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/main/exercises/JavaScriptEx2.md)
 
 
 ---
@@ -840,7 +840,7 @@ A hyperlink: [FC Barcelona](http://www.fcbarcelona.com)
 @title[Exercise 3]
 ### Do Exercise 3 - Event Handling Part 1
 
-[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/master/exercises/JavaScriptEx3.md)
+[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/main/exercises/JavaScriptEx3.md)
 
 
 
@@ -943,11 +943,14 @@ window.onload = function()
 @title[Exercise 3]
 ### Exercise 3 - Event Handling Part 2
 
-[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/master/exercises/JavaScriptEx3.md)
+[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/main/exercises/JavaScriptEx3.md)
 
 
+---
+@title[Exercise 4 5]
+### Exercise 3 - Event Handling Part 3 & 4
 
-
+[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/main/exercises/JavaScriptEx3.md)
 
 
 
