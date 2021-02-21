@@ -954,6 +954,168 @@ window.onload = function()
 
 
 
+---
+@title[Contents]
+### Contents
+
+@ol[](false)
+- What is JavaScript?
+- Three Web Layers
+- Separation of Concerns
+- Hello World
+- Code Fundamentals
+- The DOM
+- Event Handling
+- **Creating DOM Elements**
+
+@olend
+
+
+---
+@title[Creating DOM Elements]
+### Creating DOM Elements
+
+3 methods are used to create new DOM elements
+
+@ul[](true)
+- ``createElement()``
+- ``appendChild()``
+- ``createTextNode()``
+- Let's see an example...
+@ulend
+
+
+---
+@title[Creating DOM Elements]
+### Creating DOM Elements
+
+Consider the HTML:
+
+```html
+<ul id="myList">
+ <li>Rihanna</li>
+ <li>Lady Gaga</li>
+</ul>
+```
+
+![img](/images/createElement1.png)
+
+
+---
+@title[Creating DOM Elements]
+### Creating DOM Elements
+
+@ul[](true)
+- You can create new HTML elements and add them to the DOM.
+- Let's add a new `<li>` element for _Miley Cyrus_
+- Two steps to do this:
+@ulend
+@ol[](true)
+- Create the element
+- Add it to the DOM...
+@olend
+
+
+---
+@title[Creating DOM Elements]
+### 1. Create the Element
+
+```javascript
+var newElement = document.createElement("li");
+var myText = document.createTextNode("Miley Cyrus");
+newElement.appendChild(myText);
+```
+@[1](create the li element)
+@[1,2](create the element text node)
+@[1,2,3](add the text node to the element)
+
+@ul[](true)
+- Other elements that have text nodes are `<p>`, `<h1>`, `<a>`, etc.
+- See [createElement()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement), [appendChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild), [createTextNode()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode)
+@ulend
+
+---
+
+![img](/images/createElement2.png)
+
+
+- `<li>` element for Miley Cyrus created but unattached...
+
+---
+@title[Creating DOM Elements]
+### 2. Add the element to DOM
+
+```javascript
+var newElement = document.createElement("li");
+var myText = document.createTextNode("Miley Cyrus");
+newElement.appendChild(myText);
+
+var myList = document.getElementById("myList");
+myList.appendChild(newElement);
+```
+@[5](get a reference to the ul)
+@[5,6](add our newElement to the ul)
+@[*]()
+
+---
+
+![img](/images/createElement3.png)
+
+- `<li>` element for Miley Cyrus added 
+
+---
+@title[Creating DOM Elements]
+### Creating DOM Elements
+
+Let's try adding a new anchor element to a `<div>` container:
+
+```html
+<div id="myLinks">
+</div>
+```
+
+---
+@title[Creating DOM Elements]
+### 1. Create the Element
+
+```javascript
+var newElement = document.createElement("a");
+var myText = document.createTextNode("Miley Cyrus");
+newElement.setAttribute("href","www.mileycyrus.com/");
+newElement.appendChild(myText);
+```
+@[1](create the a element)
+@[1,2](create the element text node)
+@[1,2,3](set element attribute ahref)
+@[1,2,3,4](add the text node to the element)
+
+![img](/images/nelly1.png)
+
+---
+@title[Creating DOM Elements]
+### 2. Add the element to DOM
+
+```javascript
+var newElement = document.createElement("a");
+var myText = document.createTextNode("Miley Cyrus");
+newElement.setAttribute("href","www.mileycyrus.com/");
+newElement.appendChild(myText);
+
+var myLinks = document.getElementById("myLinks");
+myLinks.appendChild(newElement);
+```
+@[6](get a reference to the div)
+@[6,7](add our newElement to the div)
+@[*]()
+
+![img](/images/nelly2.png)
+
+---
+@title[Exercise 4]
+### Exercise 4 - DOM Manipulation
+
+[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/master/exercises/JavaScriptEx4.md)
+
 
 ---?color=black
 @ulend
