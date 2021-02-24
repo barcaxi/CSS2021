@@ -1114,7 +1114,269 @@ myLinks.appendChild(newElement);
 @title[Exercise 4]
 ### Exercise 4 - DOM Manipulation
 
-[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/master/exercises/JavaScriptEx4.md)
+[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/main/exercises/JavaScriptEx4.md)
+
+
+
+
+---
+@title[Contents]
+### Contents
+
+@ol[](false)
+- What is JavaScript?
+- Three Web Layers
+- Separation of Concerns
+- Hello World
+- Code Fundamentals
+- The DOM
+- Event Handling
+- Creating DOM Elements
+- **Form Validation**
+
+@olend
+
+---
+@title[Form Validation]
+### Form Validation
+
+![img](/images/aform.png)
+<!-- ![img](images/aform.png) -->
+
+---
+@title[Form Validation]
+### Form Validation
+
+The 2 most important things forms have are:
+@ol[](true)
+- the values of the form elements
+- the events that happen when you use a form
+@olend
+
+---
+@title[Form Validation]
+### Form Validation
+
+A simple form:
+
+![img](/images/aform.png)
+<!-- ![img](images/aform.png) -->
+
+and it's HTML code...
+
+---
+@title[Form Validation]
+### Form Validation
+
+```html
+<h1>Registration Page</h1>
+
+<form id="myFormId" method="POST" action="process.php">
+   Email
+   <input id="emailId" name="email" type="text" />
+   Password
+   <input id="passwordId" name="password" type="password" />
+
+   <input value="Register" type="submit" />
+</form>
+```
+@[3,10](form element)
+@[3,10,4-7](labels, textbox & password textbox)
+@[3,10,4-7,9](submit button)
+
+---
+@title[Form Validation]
+### Form Validation
+
+```html
+<h1>Registration Page</h1>
+
+<form id="myFormId" method="POST" action="process.php">
+   Email
+   <input id="emailId" name="email" type="text" />
+   Password
+   <input id="passwordId" name="password" type="password" />
+
+   <input value="Register" type="submit" />
+</form>
+```
+
+JavaScript can access the `<form>` by it's `id` attribute:
+```javascript
+var form = document.getElementById("myFormId");
+```
+
+---
+@title[Form Validation]
+### Form Validation
+
+```html
+<h1>Registration Page</h1>
+
+<form id="myFormId" method="POST" action="process.php">
+   Email
+   <input id="emailId" name="email" type="text" />
+   Password
+   <input id="passwordId" name="password" type="password" />
+
+   <input value="Register" type="submit" />
+</form>
+```
+
+JavaScript can access form elements by their `id` attribute:
+```javascript
+var email = document.getElementById("emailId");
+```
+
+---
+@title[Form Validation]
+### Form Validation
+
+Let's see @size[1.5em](values) and common @size[1.5em](events) for some form elements like:
+@ul[](true)
+- text boxes
+- radio & check buttons
+- dropdown boxes
+- submit buttons
+- These are the basics you need to know.
+@ulend
+
+
+---
+@title[Form Validation]
+### Form Validation
+
+**Text box**
+```html
+<input id="emailId" name="email" type="text" />
+```
+**Property:** `value`
+```javascript
+var email=document.getElementById("emailId").value;
+```
+**Events:** `onblur`, `onfocus`, `onchange`, `onkeypress`, `onkeydown`, `onkeyup`
+
+[@fa[external-link]](http://localhost/javascript/form_textbox.html)
+
+---
+@title[Form Validation]
+### Form Validation
+
+**Check & Radio buttons**
+```html
+<input id="agree" name="agree" type="checkbox">Click to agree</input>
+```
+**Property:** `checked`
+```javascript
+if(document.getElementById("agree").checked)
+   alert("Thanks");
+else
+   alert("You must agree to continue");
+```
+**Events:** `onclick`, `onchange`
+
+[@fa[external-link]](http://localhost/javascript/form_checkbox.html)
+
+
+---
+@title[Form Validation]
+
+**Dropdown box**
+```html
+<select id="colour" name="colour">
+  <option value="Red">Red</option>
+  <option value="Green">Green</option>
+</select>
+```
+**Properties:** `value`, `text`, `length`, `selectedIndex`, `options[]`
+
+```javascript
+// print the text from the selected option
+var select=document.getElementById("colour");
+alert(select.options[select.selectedIndex].text);
+```
+**Events:** `onchange`,
+
+[@fa[external-link]](http://localhost/javascript/form_select.html)
+
+
+---
+@title[Form Validation]
+<!-- ### Form Validation -->
+
+**FORM element**
+```html
+<form id="myFormId" method="POST" action="process.php">
+   ...
+   ...
+   <input type="submit" value="Register" />
+</form>
+```
+**Properties:** None
+
+**Events:** `onsubmit` is called when submit button is clicked
+
+```javascript
+// capture form being submitted
+document.getElementById("myFormId").onsubmit=function()
+{
+   // validate form here
+}
+```
+
+---
+@title[Form Validation]
+### Form Validation
+
+Let's do some form validation
+
+![img](/images/validate1.png)
+<!-- ![img](images/validate1.png) -->
+
+---
+```html
+<form id="myFormId" method="POST" action="process.php">
+   Email: <input id="emailId" name="email" type="text" />
+   Password: <input id="passwordId" name="password" type="password" />
+   <input value="Register" type="submit" />
+</form>
+<p id="errorMsg"></p>
+```
+@[1-5](The form)
+@[1-5,6](a div for error messages)
+
+---
+
+```javascript
+window.onload = function(){
+   document.getElementById("myFormId").onsubmit=function()  {
+      // check email is provided
+      if(document.getElementById("emailId").value=="") {
+         document.getElementById("errorMsg").innerHTML="You MUST provide an email address";
+         return false; //NB stops form submission
+      } 
+      else {
+         document.getElementById("errorMsg").innerHTML="";
+         return true;
+      }
+   }
+}
+```
+@[1,13](when the page loads)
+@[1,13,2,12](when the submit button is clicked...)
+@[1,13,2,12,4,7,8,11](is email textbox empty?)
+@[1,13,2,12,4,7,8,11,5,6](display a error message and ...)
+@[1,13,2,12,4,7,8,11,5,6](stop form being posted)
+@[1,13,2,12,4,7,8,11,5,6,9,10](else clear messages and post form)
+@[*]()
+
+
+---
+@title[Exercise 5]
+### Exercise 5 - Form Validation
+
+[@fa[external-link]](https://github.com/noucampdotorgCSS2021/javascript/blob/main/exercises/JavaScriptEx5.md)
+
 
 
 ---?color=black
